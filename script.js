@@ -1,5 +1,8 @@
 const rps = ["rock", "paper", "scissors"];
 
+const humanScore = 0;
+comst computerScore = 0;
+
 function randomInt(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -7,7 +10,6 @@ function randomInt(min, max) {
 }
 
 function inRps(choice) {
-  choice = String(choice).toLowerCase();
   for(let i = 0; i < 3; i++) {
     if (rps[i] == choice) {
       return true;
@@ -24,7 +26,11 @@ function getComputerChoice() {
 function getHumanChoice() {
   let choice = " ";
   while(inRps(choice) === false) {
-    choice = prompt("Rock, paper or scissors?");
+    choice = String(prompt("Rock, paper or scissors?")).toLowerCase();
   }
   return choice;
+}
+
+function playRound(humanChoice, computerChoice) {
+  
 }
