@@ -29,22 +29,16 @@ function getHumanChoice() {
   return choice;
 }
 
-
-//playRound(getHumanChoice(), getComputerChoice());
-
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   function playRound(humanChoice, computerChoice) {
     let winner = " ";
-    //console.log("human choice: " + humanChoice);
-    //console.log("computer choice: " + computerChoice);
     for (let i = 0; i < 3; i++) {
       if(humanChoice == rps[i]) {
         for (let j = 0; j < 3; j++) {
           if(computerChoice == rps[j]) {
             if(i == j) {
-              //winner = "draw";
               message = `Draw! Both chose ${rps[i]}\n (h: ${humanScore}, c:${computerScore})`;
               console.log(message);
               return;
@@ -54,7 +48,6 @@ function playGame() {
               j -= 3;
             }
             if(i == j+1) {
-              //winner = "human";
               if(j < 0){
                 j += 3;
               }
@@ -68,7 +61,6 @@ function playGame() {
               j -= 3;
             }
             if(i == j+2) {
-              //winner = "computer";
               if(j < 0){
                 j += 3;
               }
