@@ -22,13 +22,10 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let choice = " ";
-  let first_iteration = true;
+  let choice = String(prompt("Rock, paper or scissors?")).toLowerCase();
+
   while(inRps(choice) === false) {
-    if(first_iteration == false) {
-      alert(`${choice} is not valid input`);
-    }
-    first_iteration = false;
+    alert(`${choice} is not valid input`);
     choice = String(prompt("Rock, paper or scissors?")).toLowerCase();
   }
   return choice;
