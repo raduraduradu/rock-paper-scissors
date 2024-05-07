@@ -87,19 +87,16 @@ function playGame() {
   function playRound(humanChoice, computerChoice) {
     if(computerChoice == loser.get(humanChoice)) {
       humanScore++;
-      message = `You win! ${humanChoice} beats ${computerChoice}\n (h: ${humanScore}, c:${computerScore})`;
-      console.log(message);
+      console.log(`You win! ${humanChoice} beats ${computerChoice}\n (h: ${humanScore}, c:${computerScore})`);
       return;
     }
     else if (humanChoice == loser.get(computerChoice)) {
       computerScore++;
-      message = `You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`;
-      console.log(message);
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`);
       return;
     }
     else {
-      message = `Draw! Both chose ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`;
-      console.log(message);
+      console.log(`Draw! Both chose ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`);
       return;
     }
   }
