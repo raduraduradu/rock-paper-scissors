@@ -39,51 +39,10 @@ function getHumanChoice() {
 }
 
 function playGame() {
+
   let humanScore = 0;
   let computerScore = 0;
-  //bad impementation of playRound
-  /*function playRound(humanChoice, computerChoice) {
-    let winner = " ";
-    for (let i = 0; i < 3; i++) {
-      if(humanChoice == rps[i]) {
-        for (let j = 0; j < 3; j++) {
-          if(computerChoice == rps[j]) {
-            if(i == j) {
-              message = `Draw! Both chose ${rps[i]}\n (h: ${humanScore}, c:${computerScore})`;
-              console.log(message);
-              return;
-            }
-
-            if(j+1 == 3) {
-              j -= 3;
-            }
-            if(i == j+1) {
-              if(j < 0){
-                j += 3;
-              }
-              humanScore++;
-              message = `You win! ${rps[i]} beats ${rps[j]}\n (h: ${humanScore}, c:${computerScore})`;
-              console.log(message);
-              return;
-            }
-
-            if(j+2 >= 3) {
-              j -= 3;
-            }
-            if(i == j+2) {
-              if(j < 0){
-                j += 3;
-              }
-              computerScore++;
-              message = `You lose! ${rps[j]} beats ${rps[i]}\n (h: ${humanScore}, c:${computerScore})`;
-              console.log(message);
-              return;
-            }
-          }
-        }
-      }
-    }
-  }*/
+  
   function playRound(humanChoice, computerChoice) {
     if(computerChoice == loser.get(humanChoice)) {
       humanScore++;
