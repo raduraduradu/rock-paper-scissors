@@ -1,5 +1,12 @@
 const rps = ["rock", "paper", "scissors"];
 
+//winner-loser pairs
+const loser = new Map([
+  ["rock", "scissors"],
+  ["paper", "rock"],
+  ["scissors", "paper"]
+]);
+
 
 function randomInt(min, max) {
   const minCeiled = Math.ceil(min);
@@ -34,7 +41,8 @@ function getHumanChoice() {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-  function playRound(humanChoice, computerChoice) {
+  //bad impementation of playRound
+  /*function playRound(humanChoice, computerChoice) {
     let winner = " ";
     for (let i = 0; i < 3; i++) {
       if(humanChoice == rps[i]) {
@@ -74,6 +82,25 @@ function playGame() {
           }
         }
       }
+    }
+  }*/
+  function playRound(humanChoice, computerChoice) {
+    if(computerChoice == loser.get(humanChoice)) {
+      humanScore++;
+      message = `You win! ${humanChoice} beats ${computerChoice}\n (h: ${humanScore}, c:${computerScore})`;
+      console.log(message);
+      return;
+    }
+    else if (humanChoice == loser.get(computerChoice)) {
+      computerScore++;
+      message = `You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`;
+      console.log(message);
+      return;
+    }
+    else {
+      message = `Draw! Both chose ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`;
+      console.log(message);
+      return;
     }
   }
 
