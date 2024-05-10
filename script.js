@@ -59,10 +59,7 @@ function playGame() {
       return;
     }
   }
-
-  for (let r = 0; r < 5; r++) {
-    playRound(getHumanChoice(), getComputerChoice());
-  }
+ 
   if(humanScore > computerScore) {
   console.log(`Final winner: you (h: ${humanScore}, c:${computerScore})`);
   }
@@ -75,5 +72,11 @@ function playGame() {
     console.log(`Draw! (tied on score ${humanScore})`);
   }
 }
+
+
+btn-rock = document.querySelector("#btn-rock");
+btn-rock.addEventListener("click", () => {
+  playRound("rock", getComputerChoice);
+});
 
 playGame();
