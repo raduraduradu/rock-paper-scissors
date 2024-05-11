@@ -21,6 +21,10 @@ body {
   font-size: 60%;
   font-weight: 700;
 }
+.footer {
+  font-size: 40%;
+  font-weight: 300;
+}
 
 .container {
   display: flex;
