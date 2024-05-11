@@ -55,11 +55,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function declareFinalWinner(){
-  const htmlBody = document.querySelector("body");
-  const finalMessage = document.createElement("div");
-  finalMessage.style.textAlign = "center";
-
-  htmlBody.prepend(finalMessage);
+  //const htmlBody = document.querySelector("body");
+  const finalMessage = document.querySelector("#final-message");
 
   if(humanScore > computerScore) {
   //console.log(`Final winner: you (h: ${humanScore}, c:${computerScore})`);

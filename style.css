@@ -1,11 +1,13 @@
 body {
   font-family: roboto, sans-serif;
-  font-size: 30px;
+  font-size: 50px;
   background-color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 80px;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
@@ -16,7 +18,6 @@ body {
 }
 
 div#text {
-  width: 40%;
   text-align: center;
   margin: 0 auto;
 }
@@ -25,7 +26,13 @@ button {
   background-color: #055;
   border: none;
   border-radius: 5px;
-  padding: 8px 16px;
+  padding: 16px 32px;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+#final-message {
+  height: 10%;
+  margin-top: 10px;
+  text-align: center;
 }
