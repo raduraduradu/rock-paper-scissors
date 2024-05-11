@@ -23,6 +23,7 @@ function getComputerChoice() {
 let humanScore = 0;
 let computerScore = 0;
 let textdiv = document.querySelector("div#text");
+//textdiv.style.backgroundColor = "#555";
 
 function playRound(humanChoice, computerChoice) {
   if(humanScore > 4 || computerScore > 4) {
@@ -40,7 +41,7 @@ function playRound(humanChoice, computerChoice) {
   else if (humanChoice == loser.get(computerChoice)) {
     computerScore++;
     //console.log(`You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`);
-    textdiv.style.color = "red";
+    textdiv.style.color = "#f33";
     textdiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`;
     return;
   }
@@ -56,16 +57,19 @@ function playRound(humanChoice, computerChoice) {
 function declareFinalWinner(){
   const htmlBody = document.querySelector("body");
   const finalMessage = document.createElement("div");
+  finalMessage.style.textAlign = "center";
 
   htmlBody.prepend(finalMessage);
 
   if(humanScore > computerScore) {
   //console.log(`Final winner: you (h: ${humanScore}, c:${computerScore})`);
+    finalMessage.style.color = "green";
     finalMessage.textContent = `Final winner: you (h: ${humanScore}, c:${computerScore})`
   }
   
   else if (computerScore > humanScore) {
     //console.log(`Final winner: computer (h: ${humanScore}, c:${computerScore})`);
+    finalMessage.style.color = "#f33";
     finalMessage.textContent = `Final winner: computer (h: ${humanScore}, c:${computerScore})`;
   }
  
