@@ -87,3 +87,16 @@ const btnScissors = document.querySelector("#btn-scissors");
 btnScissors.addEventListener("click", () => {
   playRound("scissors", getComputerChoice());
 });
+
+const btnReset = document.querySelector("#btn-reset");
+btnReset.addEventListener("click", () => {
+  humanScore = 0;
+  computerScore = 0;
+
+  textdiv.textContent = "";
+  scoreDiv.textContent = "";
+
+  btnRock.disabled = false;
+  btnPaper.disabled = false;
+  btnScissors.disabled = false;
+})

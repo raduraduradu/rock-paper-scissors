@@ -24,6 +24,18 @@ body {
 .footer {
   font-size: 40%;
   font-weight: 300;
+  justify-content: space-between;
+}
+
+.footer button,
+.footer p {
+  margin: 0 15px;
+}
+button#btn-reset {
+  background-color: #222;
+}
+button#btn-reset:hover {
+  background-color: #822;
 }
 
 .container {
@@ -48,6 +60,7 @@ button {
   color: white;
   font-size: 20px;
 }
+
 
 button:hover {
   background-color: #535;
