@@ -7,7 +7,6 @@ const loser = new Map([
   ["scissors", "paper"]
 ]);
 
-
 function randomInt(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
@@ -19,29 +18,24 @@ function getComputerChoice() {
   return choice;
 }
 
-
 let humanScore = 0;
 let computerScore = 0;
 const scoreDiv = document.querySelector("#score");
 let textdiv = document.querySelector("div#text");
-//textdiv.style.backgroundColor = "#555";
 
 function playRound(humanChoice, computerChoice) {
 
   if(computerChoice == loser.get(humanChoice)) {
     humanScore++;
-    //console.log(`You win! ${humanChoice} beats ${computerChoice}\n (h: ${humanScore}, c:${computerScore})`);
     textdiv.style.color = "Green";
     textdiv.textContent = `You win! ${humanChoice} beats ${computerChoice}\n`;
   }
   else if (humanChoice == loser.get(computerChoice)) {
     computerScore++;
-    //console.log(`You lose! ${computerChoice} beats ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`);
     textdiv.style.color = "#f33";
     textdiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}\n`;
   }
   else {
-    //console.log(`Draw! Both chose ${humanChoice}\n (h: ${humanScore}, c:${computerScore})`);
     textdiv.style.color = "orange";
     textdiv.textContent = `Draw! Both chose ${humanChoice}\n`;
   }
@@ -53,16 +47,13 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function declareFinalWinner(){
-  //const htmlBody = document.querySelector("body");
   
   if(humanScore > computerScore) {
-  //console.log(`Final winner: you (h: ${humanScore}, c:${computerScore})`);
     scoreDiv.style.color = "green";
     scoreDiv.textContent = `Final winner: you (h: ${humanScore}, c:${computerScore})`
   }
   
   else if (computerScore > humanScore) {
-    //console.log(`Final winner: computer (h: ${humanScore}, c:${computerScore})`);
     scoreDiv.style.color = "#f33";
     scoreDiv.textContent = `Final winner: computer (h: ${humanScore}, c:${computerScore})`;
   }
@@ -71,7 +62,6 @@ function declareFinalWinner(){
   btnPaper.disabled = true;
   btnScissors.disabled = true;
 }  
-
 
 const btnRock = document.querySelector("#btn-rock");
 btnRock.addEventListener("click", () => {
